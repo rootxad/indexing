@@ -498,7 +498,7 @@ self.props = {
 <meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>${self.props.title}</title>
-<link href="/~_~_gdindex/resources/css/app.css" rel=stylesheet>
+<link href="/server_index/resources/css/app.css" rel=stylesheet>
 </head>
 <body>
 <script>window.props = { 
@@ -508,7 +508,7 @@ self.props = {
 	export_url: ${self.props.export_url},
 	download_aria2: ${self.props.download_aria2}
 }<\/script>
-<div id=app></div><script src="/~_~_gdindex/resources/js/app.js"><\/script>
+<div id=app></div><script src="/server_index/resources/js/app.js"><\/script>
 </body>
 </html>`;
 
@@ -518,8 +518,8 @@ self.props = {
     } = request;
     const rootId = request.searchParams.get('rootId') || self.props.default_root_id;
 
-    if (path.startsWith('/~_~_gdindex/resources/')) {
-      const remain = path.replace('/~_~_gdindex/resources/', '');
+    if (path.startsWith('/server_index/resources/')) {
+      const remain = path.replace('/server_index/resources/', '');
       const r = await fetch(`${resourceBaseUrl}${remain}`);
       return new Response(r.body, {
         headers: {
@@ -527,7 +527,7 @@ self.props = {
           'Cache-Control': 'max-age=600'
         }
       });
-    } else if (path === '/~_~_gdindex/drives') {
+    } else if (path === '/server_index/drives') {
       return new Response(JSON.stringify((await gd.listDrive())), {
         headers: {
           'Content-Type': 'application/json'
