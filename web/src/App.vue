@@ -32,20 +32,6 @@
                     </v-menu>
                 </template>
             </v-toolbar-items>
-            <portal-target name="navbar" slim />
-            <v-spacer />
-            <v-toolbar-items>
-                <v-btn
-                    text
-                    class="text-none hidden-sm-and-down"
-                    tag="a"
-                    href="https://github.com/maple3142/GDIndex"
-                    target="_blank"
-                >
-                    <v-icon>mdi-github-circle</v-icon>&nbsp;GitHub</v-btn
-                >
-            </v-toolbar-items>
-        </v-app-bar>
 
         <v-content> <router-view /> </v-content>
         <LoginDialog :cond="showAuthInput" />
@@ -86,7 +72,7 @@ export default {
                 }));
         if (!ok) return;
 
-        const { drives } = await api.get('/~_~_gdindex/drives').json();
+        const { drives } = await api.get('/server_index/drives').json();
         this.drives = [{ text: this.$t('mainDrive'), value: 'root' }].concat(
             drives.map(d => ({
                 value: d.id,
