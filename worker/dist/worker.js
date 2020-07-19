@@ -490,7 +490,7 @@ self.props = {
   }
 
   const gd = new GoogleDrive(self.props);
-  const resourceBaseUrl = self.props.resource_base_url || 'https://raw.githubusercontent.com/CodeingBoy/GDIndex/master/web/dist/';
+  const resourceBaseUrl = self.props.resource_base_url || 'https://raw.githubusercontent.com/rootxad/GDIndex/master/web/dist/';
   const HTML = `
 <!DOCTYPE html>
 <html lang=en>
