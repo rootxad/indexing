@@ -1,8 +1,8 @@
 self.props = {
 	title: 'GDIndex',
 	default_root_id: 'root',
-	client_id: '202264815644.apps.googleusercontent.com',
-	client_secret: 'X4Z3ca8xfWDb1Voo-F9a7ZxJ',
+	client_id: '177693038605-h0srmp108em431e1o58lai2oj3rm8ghe.apps.googleusercontent.com',
+	client_secret: '7X3df4Ij5p_RD_lDIx1kaS6R',
 	refresh_token: '',
 	auth: false,
 	user: '',
